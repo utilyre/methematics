@@ -126,7 +126,7 @@ const Guidelines = styled.section`
   }
 
   h3::after {
-    content: ':'
+    content: ':';
   }
 
   h3 {
@@ -135,7 +135,7 @@ const Guidelines = styled.section`
 
   p {
     display: inline;
-    margin-inline-start: .5rem;
+    margin-inline-start: 0.5rem;
   }
 `
 

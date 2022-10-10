@@ -190,11 +190,12 @@ const App = () => {
         >
           <Input
             type='number'
-            placeholder='Give me a number'
             required
+            min={0}
             ref={operandRef}
             value={operandStr}
             onChange={(e) => setOperandStr(e.target.value)}
+            placeholder='Give me a number'
           />
 
           <Button type='submit'>Go</Button>

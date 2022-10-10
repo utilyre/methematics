@@ -159,7 +159,7 @@ Error generating stack: `+o.message+`
   }
 
   h3::after {
-    content: ':'
+    content: ':';
   }
 
   h3 {
@@ -168,6 +168,6 @@ Error generating stack: `+o.message+`
 
   p {
     display: inline;
-    margin-inline-start: .5rem;
+    margin-inline-start: 0.5rem;
   }
-`,La=e=>{const t=[];for(let n=1;n<=e;n++)e%n===0&&t.push(n);return t},Vh=()=>{const[e,t]=Me.exports.useState(""),[n,r]=Me.exports.useState([]),l=Me.exports.useMemo(()=>e===""?0:parseFloat(e),[e]),o=Me.exports.useRef(null);return Me.exports.useEffect(()=>{var i;(i=o.current)==null||i.focus()},[]),Me.exports.useEffect(()=>{var i,u,s;if(e===""){(i=o.current)==null||i.setCustomValidity("");return}if(l>0){(u=o.current)==null||u.setCustomValidity("");return}(s=o.current)==null||s.setCustomValidity("Please provide a positive number.")},[e]),Ze(Rh,{children:oi(Lh,{children:[Ze(Oh,{children:"Methematics"}),oi(Ah,{onSubmit:i=>{i.preventDefault(),r(La(l))},children:[Ze(Ih,{type:"number",placeholder:"Give me a number",required:!0,ref:o,value:e,onChange:i=>t(i.target.value)}),Ze(Mh,{type:"submit",children:"Go"})]}),Ze(Dh,{children:n.length>0?n.map(i=>Ze(jh,{onClick:()=>{t(i.toString()),r(La(i))},children:i},$a())):Ze(Fh,{children:"Nothing to show..."})}),Ze(Uh,{children:n.filter(i=>Object.keys(Ra).includes(i.toString())).map(i=>oi("article",{children:[Ze("h3",{children:i}),Ze("p",{children:Ra[i.toString()]})]},$a()))})]})})};ii.createRoot(document.getElementById("root")).render(Ze(Ar.StrictMode,{children:Ze(Vh,{})}));
+`,La=e=>{const t=[];for(let n=1;n<=e;n++)e%n===0&&t.push(n);return t},Vh=()=>{const[e,t]=Me.exports.useState(""),[n,r]=Me.exports.useState([]),l=Me.exports.useMemo(()=>e===""?0:parseFloat(e),[e]),o=Me.exports.useRef(null);return Me.exports.useEffect(()=>{var i;(i=o.current)==null||i.focus()},[]),Me.exports.useEffect(()=>{var i,u,s;if(e===""){(i=o.current)==null||i.setCustomValidity("");return}if(l>0){(u=o.current)==null||u.setCustomValidity("");return}(s=o.current)==null||s.setCustomValidity("Please provide a positive number.")},[e]),Ze(Rh,{children:oi(Lh,{children:[Ze(Oh,{children:"Methematics"}),oi(Ah,{onSubmit:i=>{i.preventDefault(),r(La(l))},children:[Ze(Ih,{type:"number",required:!0,min:0,ref:o,value:e,onChange:i=>t(i.target.value),placeholder:"Give me a number"}),Ze(Mh,{type:"submit",children:"Go"})]}),Ze(Dh,{children:n.length>0?n.map(i=>Ze(jh,{onClick:()=>{t(i.toString()),r(La(i))},children:i},$a())):Ze(Fh,{children:"Nothing to show..."})}),Ze(Uh,{children:n.filter(i=>Object.keys(Ra).includes(i.toString())).map(i=>oi("article",{children:[Ze("h3",{children:i}),Ze("p",{children:Ra[i.toString()]})]},$a()))})]})})};ii.createRoot(document.getElementById("root")).render(Ze(Ar.StrictMode,{children:Ze(Vh,{})}));

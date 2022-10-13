@@ -8,6 +8,7 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
+      base: '/methematics/',
       includeAssets: ['favicon.svg'],
       manifest: {
         name: 'Methematics',

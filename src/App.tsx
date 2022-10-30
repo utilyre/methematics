@@ -139,16 +139,19 @@ const Guidelines = styled.section`
   }
 `
 
+// TODO: store already found results in localStorage
 const findDivisors = (operand: number) => {
-  const divisors = [1, operand]
-  for (let i = 1; i <= Math.floor(operand / 2); i++) {
+  const divisors = [1]
+  for (let i = 2; i <= Math.floor(operand / 2); i++) {
     if (operand % i !== 0) continue
     divisors.push(i)
   }
 
+  if (divisors.length > 1) {
+    divisors.push(operand)
+  }
+
   return divisors
-    .filter((divisor, index, self) => self.indexOf(divisor) === index)
-    .sort((d1, d2) => d1 - d2)
 }
 
 const App = () => {

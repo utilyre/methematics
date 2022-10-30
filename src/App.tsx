@@ -139,18 +139,43 @@ const Guidelines = styled.section`
   }
 `
 
-// TODO: store already found results in localStorage
+type Result = {
+  operand: number
+  divisors: number[]
+}
+
+const findResult = (operand: number) => {
+  const item = localStorage.getItem('methematics')
+  const results: Result[] = item === null ? ([] as Result[]) : JSON.parse(item)
+
+  return [
+    results.find((result) => result.operand === operand) ?? null,
+    results,
+  ] as const
+}
+
+const saveResult = (result: Result) => {
+  const [foundResult, results] = findResult(result.operand)
+  if (foundResult !== null) return
+
+  results.push(result)
+  localStorage.setItem('methematics', JSON.stringify(results))
+}
+
 const findDivisors = (operand: number) => {
+  const [foundResult] = findResult(operand)
+  if (foundResult !== null) return foundResult.divisors
+
   const divisors = [1]
   for (let i = 2; i <= Math.floor(operand / 2); i++) {
     if (operand % i !== 0) continue
     divisors.push(i)
   }
-
   if (divisors.length > 1) {
     divisors.push(operand)
   }
 
+  saveResult({ operand, divisors })
   return divisors
 }
 
